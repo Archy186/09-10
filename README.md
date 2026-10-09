@@ -52,3 +52,54 @@ I will be DevOps Engineer!</h1>
 <img width="928" height="1002" alt="Задание 3-2" src="https://github.com/user-attachments/assets/a11fe622-31dd-46a3-a6ff-9276b7a920aa" />
 <img width="926" height="1021" alt="Задание 3-3" src="https://github.com/user-attachments/assets/89d50344-803b-4dae-ad13-725e158ad372" />
 <img width="949" height="250" alt="Задание 3-4" src="https://github.com/user-attachments/assets/79694d8f-8aa5-4bc0-aea5-02210b0d21fe" />
+
+# Задача 4
+Запустите первый контейнер из образа centos c любым тегом в фоновом режиме, подключив папку текущий рабочий каталог $(pwd) на хостовой машине в /data контейнера, используя ключ -v.
+Запустите второй контейнер из образа debian в фоновом режиме, подключив текущий рабочий каталог $(pwd) в /data контейнера.
+Подключитесь к первому контейнеру с помощью docker exec и создайте текстовый файл любого содержания в /data.
+Добавьте ещё один файл в текущий каталог $(pwd) на хостовой машине.
+Подключитесь во второй контейнер и отобразите листинг и содержание файлов в /data контейнера.
+В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод.
+# Ответ 
+<img width="923" height="1013" alt="Задание 4" src="https://github.com/user-attachments/assets/2eb31ed3-8c5a-45ad-8529-7bc7e0db5f95" />
+
+# Задача 5
+Создайте отдельную директорию(например /tmp/netology/docker/task5) и 2 файла внутри него. "compose.yaml" с содержимым:
+version: "3"
+services:
+  portainer:
+    network_mode: host
+    image: portainer/portainer-ce:latest
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+"docker-compose.yaml" с содержимым:
+
+version: "3"
+services:
+  registry:
+    image: registry:2
+
+    ports:
+    - "5000:5000"
+И выполните команду "docker compose up -d". Какой из файлов был запущен и почему? (подсказка: https://docs.docker.com/compose/compose-application-model/#the-compose-file )
+
+Отредактируйте файл compose.yaml так, чтобы были запущенны оба файла. (подсказка: https://docs.docker.com/compose/compose-file/14-include/)
+
+Выполните в консоли вашей хостовой ОС необходимые команды чтобы залить образ custom-nginx как custom-nginx:latest в запущенное вами, локальное registry. Дополнительная документация: https://distribution.github.io/distribution/about/deploying/
+
+Откройте страницу "https://127.0.0.1:9000" и произведите начальную настройку portainer.(логин и пароль адмнистратора)
+
+Откройте страницу "http://127.0.0.1:9000/#!/home", выберите ваше local окружение. Перейдите на вкладку "stacks" и в "web editor" задеплойте следующий компоуз:
+
+version: '3'
+
+services:
+  nginx:
+    image: 127.0.0.1:5000/custom-nginx
+    ports:
+      - "9090:80"
+Перейдите на страницу "http://127.0.0.1:9000/#!/2/docker/containers", выберите контейнер с nginx и нажмите на кнопку "inspect". В представлении <> Tree разверните поле "Config" и сделайте скриншот от поля "AppArmorProfile" до "Driver".
+
+Удалите любой из манифестов компоуза(например compose.yaml). Выполните команду "docker compose up -d". Прочитайте warning, объясните суть предупреждения и выполните предложенное действие. Погасите compose-проект ОДНОЙ(обязательно!!) командой.
+
+В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод, файл compose.yaml , скриншот portainer c задеплоенным компоузом.
