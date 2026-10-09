@@ -18,6 +18,6 @@ I will be DevOps Engineer!</h1>
 Предоставьте ответ в виде ссылки на https://hub.docker.com/<username_repo>/custom-nginx/general .
 
 # ответ 
-https://hub.docker.com/r/archy186/custom-nginx/tags
+[https://hub.docker.com/r/archy186/custom-nginx/tags](https://hub.docker.com/layers/archy186/custom-nginx/1.0.0/images/sha256-a8ef502f7931ab23250851195c254f6facfae02410cee884b73506f8d5b739c0)
 
 # Задача 2
