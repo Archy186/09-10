@@ -103,3 +103,11 @@ services:
 Удалите любой из манифестов компоуза(например compose.yaml). Выполните команду "docker compose up -d". Прочитайте warning, объясните суть предупреждения и выполните предложенное действие. Погасите compose-проект ОДНОЙ(обязательно!!) командой.
 
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод, файл compose.yaml , скриншот portainer c задеплоенным компоузом.
+# Ответ 
+<img width="934" height="651" alt="Задание 5" src="https://github.com/user-attachments/assets/ac2a7b79-7ebe-4c3d-a0ed-8a64a24fcf2c" />
+<img width="938" height="492" alt="Задание 5-1" src="https://github.com/user-attachments/assets/2fda44de-4496-421f-9334-69cef659e3b0" />
+<img width="931" height="815" alt="Задание 5-2" src="https://github.com/user-attachments/assets/81f68212-ad20-409f-ac87-f57714349b86" />
+<img width="1815" height="1045" alt="Задание 5-3" src="https://github.com/user-attachments/assets/2b15259c-b956-48ef-bf65-114a287d28f1" />
+<img width="946" height="312" alt="Задание 5-4" src="https://github.com/user-attachments/assets/c8ad4db8-96d5-4f80-87f6-6d92ab4d4038" />
+
+
